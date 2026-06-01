@@ -130,7 +130,8 @@ h1,h2,h3,h4,p{margin:0}
 
 /* fund-plate — фиксированная, появляется когда шапка прячется */
 .fund-plate{
-  position:fixed;top:calc(14px + (var(--hh) - 62px) / 2);right:clamp(20px,5vw,40px);z-index:70;
+  position:fixed;top:calc(14px + (var(--hh) - 62px) / 2);
+  right:calc(max(20px, (100vw - 1160px) / 2) + clamp(20px,5vw,40px));z-index:70;
   padding:8px 13px;border-radius:14px;border:1px solid var(--hair);
   background:rgba(255,255,255,.88);backdrop-filter:blur(18px) saturate(1.4);
   box-shadow:0 4px 24px rgba(15,17,24,.10);
@@ -354,7 +355,7 @@ h2.h2{font-family:var(--fd);font-weight:600;font-size:clamp(30px,4.2vw,50px);lin
 
 .footer-top{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
 .footer-brandbox{display:flex;flex-direction:column;gap:22px}
-.footer .brand-mark{height:52px}
+.footer .brand-mark{height:52px;filter:none}
 .footer .brand-name{color:#fff;font-size:28px}
 .footer .brand-sub{color:rgba(255,255,255,.5);font-size:11px}
 .footer-tag{max-width:300px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.55)}
@@ -408,9 +409,9 @@ h2.h2{font-family:var(--fd);font-weight:600;font-size:clamp(30px,4.2vw,50px);lin
   border:1px solid var(--hair);
   box-shadow:0 8px 32px rgba(15,17,24,.12);
   width:min(560px, calc(100vw - 40px));
-  transition:opacity .4s var(--ease),transform .4s var(--ease);
+  transition:opacity .5s ease,translate .65s cubic-bezier(.4,0,.2,1);
 }
-.cookie-bar.hidden{opacity:0;transform:translateX(-50%) translateY(16px);pointer-events:none}
+.cookie-bar.hidden{opacity:0;translate:-50% calc(100% + 40px);pointer-events:none}
 .cookie-text{font-size:13px;color:var(--muted);line-height:1.5;margin:0;flex:1}
 .cookie-link{color:var(--violet);text-decoration:underline;text-underline-offset:2px}
 .cookie-ok{flex:none}
