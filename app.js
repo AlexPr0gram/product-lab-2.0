@@ -13,14 +13,11 @@
 
   /* ---- header shadow + hide on scroll ---- */
   var header = document.querySelector('.header');
-  var fundPlate = document.querySelector('.fund-plate');
   var lastY = 0;
   function onScroll(){
     var y = window.scrollY;
     header.classList.toggle('scrolled', y > 8);
-    var hiding = y > lastY && y > 80;
-    header.classList.toggle('hidden', hiding);
-    if(fundPlate) fundPlate.classList.toggle('visible', hiding);
+    header.classList.toggle('hidden', y > lastY && y > 80);
     lastY = y;
   }
   window.addEventListener('scroll', onScroll, {passive:true}); onScroll();

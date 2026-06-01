@@ -7,7 +7,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;450;500;550;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=27">
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
 <body>
@@ -15,7 +15,7 @@
 <header class="header">
   <div class="container nav">
     <a class="brand" href="#top" aria-label="Product Lab">
-      <span class="brand-mark" aria-hidden="true"></span>
+      <img class="brand-mark" src="assets/logo.svg" alt="" aria-hidden="true">
       <span class="brand-text">
         <span class="brand-name">Product&nbsp;Lab</span>
         <span class="brand-sub">Лаборатория решений</span>
@@ -27,19 +27,14 @@
       <a href="#process">Подход</a>
       <a href="#stack">Технологии</a>
     </nav>
-    <div class="nav-fund">
-      <span class="nf-text">
-        <b>Фонд содействия инновациям</b>
-        <em>№ 2620ГССС15-L/92989</em>
-      </span>
-    </div>
   </div>
 </header>
 
 <div class="fund-plate">
   <span class="fp-text">
-    <b>Фонд содействия инновациям</b>
-    <em>№ 2620ГССС15-L/92989</em>
+    <b>Проект поддержан Фондом содействия инновациям</b>
+    <span class="fp-prog">Программа «Студенческий стартап»</span>
+    <em>№ 2620ГССС15-L/92989 от 27.03.2024</em>
   </span>
 </div>
 
@@ -47,6 +42,10 @@
 
   <!-- HERO -->
   <section class="hero">
+    <div class="hero-bg" aria-hidden="true">
+      <img src="assets/hero-bg.png" alt="">
+      <div class="hero-bg-overlay"></div>
+    </div>
     <div class="hero-aura" aria-hidden="true"></div>
     <div class="hero-grid-bg" aria-hidden="true"></div>
     <div class="container hero-grid">
@@ -66,42 +65,6 @@
         </div>
       </div>
 
-      <!-- live analytics -->
-      <div class="sim reveal" aria-label="Аналитика проекта ProConcept">
-        <div class="sim-head">
-          <span class="sim-title"><span class="sim-dot"></span>ProConcept · Аналитика проекта</span>
-          <span class="sim-live">обновляется</span>
-        </div>
-        <div class="sim-kpis">
-          <div class="kpi"><span class="kl">NPV проекта</span><span class="kv" id="kpi-npv">+36 <small>млрд ₽</small></span></div>
-          <div class="kpi"><span class="kl">IRR</span><span class="kv" id="kpi-irr">18<small>%</small></span></div>
-          <div class="kpi"><span class="kl">Окупаемость</span><span class="kv" id="kpi-pay">4.0 <small>лет</small></span></div>
-        </div>
-        <div class="sim-chart">
-          <svg viewBox="0 0 340 160" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
-            <defs>
-              <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#7c5cff" stop-opacity=".40"/>
-                <stop offset="1" stop-color="#19c7bd" stop-opacity="0"/>
-              </linearGradient>
-              <linearGradient id="lineGrad" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0" stop-color="#9b82ff"/>
-                <stop offset="1" stop-color="#42e3d8"/>
-              </linearGradient>
-            </defs>
-            <line class="ch-zero" id="ch-zero" x1="10" x2="330"></line>
-            <path class="ch-area" id="ch-area"></path>
-            <path class="ch-line" id="ch-line"></path>
-            <circle class="ch-marker" id="ch-marker" r="4.5"></circle>
-          </svg>
-          <div class="yrs"><span>0</span><span>2</span><span>4</span><span>6</span><span>8 лет</span></div>
-        </div>
-        <div class="sim-scenarios" role="tablist">
-          <button class="sc active" data-sc="0" type="button">Базовый</button>
-          <button class="sc" data-sc="1" type="button">Оптимистичный</button>
-          <button class="sc" data-sc="2" type="button">Консервативный</button>
-        </div>
-      </div>
     </div>
   </section>
 
@@ -113,7 +76,7 @@
           <span class="kicker">Концепция</span>
           <h2 class="h2">Лаборатория, где <span class="grad">идея продукта</span> проходит путь от кейса до работающего решения</h2>
         </div>
-        <p class="section-lead">В основе сайта — образ продуктовой лаборатории: модули, линии связи, проверка гипотез и практический результат.</p>
+        <p class="section-lead">Каждый продукт Product Lab проходит четыре этапа: от формализации отраслевой задачи до готового цифрового решения, проверенного на реальных данных и сценариях.</p>
       </div>
       <div class="modules reveal">
         <article class="module"><span class="node"></span><span class="idx">МОДУЛЬ 01</span><h3>Отраслевая задача</h3><p>Формализуем бизнес-кейс, исходные данные, роли участников и критерии результата.</p></article>
@@ -240,6 +203,10 @@
     </div>
   </section>
 
+
+</main>
+
+<footer class="footer">
   <!-- CTA -->
   <section class="section cta">
     <div class="container">
@@ -255,16 +222,12 @@
       </div>
     </div>
   </section>
-
-</main>
-
-<footer class="footer">
   <div class="footer-glow" aria-hidden="true"></div>
   <div class="container">
     <div class="footer-top">
       <div class="footer-brandbox">
         <span class="brand">
-          <span class="brand-mark" aria-hidden="true"></span>
+          <img class="brand-mark" src="assets/logo.svg" alt="" aria-hidden="true">
           <span class="brand-text"><span class="brand-name">Product&nbsp;Lab</span><span class="brand-sub">Лаборатория решений</span></span>
         </span>
         <p class="footer-tag">Цифровые решения для инженерного управления и обучения</p>
@@ -290,9 +253,9 @@
         </div>
       </div>
       <div class="footer-cards">
-        <a class="fcard" href="/cdn-cgi/l/email-protection#27665542414251097166675e464943425f095552">
+        <a class="fcard" href="mailto:Arefev.VA@yandex.ru">
           <span class="fcard-l">E-mail</span>
-          <span class="fcard-v"><span class="__cf_email__" data-cfemail="8dccffe8ebe8fba3dbcccdf4ece3e9e8f5a3fff8">[email&#160;protected]</span></span>
+          <span class="fcard-v">Arefev.VA@yandex.ru</span>
         </a>
         <a class="fcard" href="tel:+79993133393">
           <span class="fcard-l">Телефон</span>
@@ -307,15 +270,18 @@
       </div>
     </div>
 
-    <div class="footer-legal">
-      <span>ООО «ПродуктЛаб»</span>
-      <span>ИНН 2463133227</span>
-      <span>ОГРН 1242400011171</span>
-      <span>КПП 246301001</span>
-      <span>ОКВЭД 62.01</span>
-      <span class="fl-addr">660041, Красноярский край, г.о. город Красноярск, г. Красноярск, ул. Сады, д. 2К, кв. 81</span>
+    <div class="footer-meta">
+      <div class="footer-meta-row">
+        <span>ООО «ПродуктЛаб»</span>
+        <span>ИНН 2463133227</span>
+        <span>ОГРН 1242400011171</span>
+        <span>КПП 246301001</span>
+        <span>ОКВЭД 62.01</span>
+      </div>
+      <div class="footer-meta-row">
+        <span>660041, Красноярский край, г. Красноярск, ул. Сады, д. 2К, кв. 81</span>
+      </div>
     </div>
-    <p class="footer-grantline">Проект поддержан Фондом содействия инновациям в рамках программы «Студенческий стартап» · № 2620ГССС15-L/92989 от 27.03.2024</p>
 
     <div class="footer-bottom">
       <span>© 2026 ООО «ПродуктЛаб»</span>
@@ -350,6 +316,6 @@
   <button class="btn btn-primary btn-sm cookie-ok" id="cookie-ok">Хорошо</button>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="app.js"></script>
+<script src="app.js?v=4"></script>
 </body>
 </html>
