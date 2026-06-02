@@ -59,10 +59,17 @@
   /* ---- modal ---- */
   var modal = document.getElementById('modal');
   var form  = document.getElementById('form');
-  var ok    = document.getElementById('ok');
+  var modalBody = document.getElementById('modal-body');
+  var modalSuccess = document.getElementById('modal-success');
   var lastFocus = null;
+  function resetModal(){
+    if(modalBody) modalBody.hidden = false;
+    if(modalSuccess) modalSuccess.hidden = true;
+    if(form) form.reset();
+  }
   function openM(){
     lastFocus = document.activeElement;
+    resetModal();
     modal.classList.add('open');
     document.body.classList.add('modal-open');
     setTimeout(function(){ var n=document.getElementById('name'); if(n) n.focus(); }, 90);
@@ -73,8 +80,7 @@
     if(lastFocus) lastFocus.focus();
   }
   document.querySelectorAll('[data-open]').forEach(function(b){ b.addEventListener('click', openM); });
-  var closeBtn = document.querySelector('[data-close]');
-  if(closeBtn) closeBtn.addEventListener('click', closeM);
+  document.querySelectorAll('[data-close]').forEach(function(b){ b.addEventListener('click', closeM); });
   modal.addEventListener('click', function(e){ if(e.target === modal) closeM(); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && modal.classList.contains('open')) closeM(); });
 
@@ -99,8 +105,8 @@
   if(form){
     form.addEventListener('submit', function(e){
       e.preventDefault();
-      ok.classList.add('show');
-      setTimeout(function(){ form.reset(); }, 200);
+      if(modalBody) modalBody.hidden = true;
+      if(modalSuccess) modalSuccess.hidden = false;
     });
   }
 

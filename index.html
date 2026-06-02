@@ -9,7 +9,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@400;450;500;550;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=32">
+<link rel="stylesheet" href="styles.css?v=37">
 <script src="https://unpkg.com/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
 <body>
@@ -296,20 +296,29 @@
 <!-- MODAL -->
 <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Обсудить задачу">
   <div class="modal-card">
-    <div class="modal-head">
-      <div>
-        <h3>Обсудить задачу</h3>
-        <p>Расскажите, какой образовательный продукт нужен вашей команде.</p>
+    <button class="close" type="button" data-close aria-label="Закрыть">×</button>
+    <div class="modal-body" id="modal-body">
+      <div class="modal-head">
+        <div>
+          <h3>Обсудить задачу</h3>
+          <p>Расскажите, какой образовательный продукт нужен вашей команде.</p>
+        </div>
       </div>
-      <button class="close" type="button" data-close aria-label="Закрыть">×</button>
+      <form class="form" id="form">
+        <div class="field"><label for="name">Как к вам обращаться?</label><input id="name" placeholder="Имя и фамилия" required></div>
+        <div class="field"><label for="phone">Телефон</label><input id="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required></div>
+        <div class="field"><label for="msg">Задача или формат обучения</label><textarea id="msg" placeholder="Например: нужен симулятор для курса"></textarea></div>
+        <button class="btn btn-accent" type="submit">Отправить заявку</button>
+      </form>
     </div>
-    <form class="form" id="form">
-      <div class="field"><label for="name">Как к вам обращаться?</label><input id="name" placeholder="Имя и фамилия" required></div>
-      <div class="field"><label for="phone">Телефон</label><input id="phone" inputmode="tel" placeholder="+7 (___) ___-__-__" required></div>
-      <div class="field"><label for="msg">Задача или формат обучения</label><textarea id="msg" placeholder="Например: нужен симулятор для курса"></textarea></div>
-      <button class="btn btn-accent" type="submit">Отправить заявку</button>
-      <div class="ok" id="ok">Спасибо! Заявка отправлена. Мы свяжемся с вами в ближайшее время.</div>
-    </form>
+    <div class="modal-success" id="modal-success" hidden>
+      <span class="ms-check" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg>
+      </span>
+      <h3>Заявка отправлена</h3>
+      <p>Спасибо! Мы получили вашу заявку и свяжемся с вами в ближайшее время.</p>
+      <button class="btn btn-line" type="button" data-close>Закрыть</button>
+    </div>
   </div>
 </div>
 
@@ -318,6 +327,6 @@
   <button class="btn btn-primary btn-sm cookie-ok" id="cookie-ok">Хорошо</button>
 </div>
 
-<script src="app.js?v=4"></script>
+<script src="app.js?v=5"></script>
 </body>
 </html>
